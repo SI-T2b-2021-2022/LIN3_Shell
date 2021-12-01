@@ -48,6 +48,7 @@ fi
 # Partie Check
 if [ $1 == "check" ]; then
     # Show Information
+    echo ""
     echo "================================ntpstat======================================="
     ntpstat
     echo ""
