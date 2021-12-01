@@ -10,4 +10,4 @@
 
 set -e
 
-
+echo "Script serveur en $1"
