@@ -24,7 +24,7 @@ if [ $1 == "install" ]; then
 
     # Rewrite ntp.conf
     echo "Importing ntp.conf..."
-    curl https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
+    curl -q https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
 
     # Restart ntp service
     echo "Restarting ntp service..."
