@@ -32,6 +32,17 @@ if [ -z "$2" ]; then
     exit 1
 fi
 
+# Clone repo github
+if [ ! -f ./LIN3/.cloned ]; then
+    
+fi
+
+
+
+
+# Update repo
+apt update > /dev/null
+
 # Check si ntp est installé
 if ! command -v ntpd &>/dev/null; then
     echo "ntp is not installed."
@@ -68,12 +79,12 @@ if ! command -v nano &>/dev/null; then
 fi
 
 if [ $1 == "client" ]; then
-    bash ./Sources/client.sh $2
+    bash ./LIN3/client.sh $2
     exit 1
 fi
 
 if [ $1 == "serveur" ]; then
-    bash ./Sources/serveur.sh $2
+    bash ./LIN3/serveur.sh $2
     exit 1
 fi
 
