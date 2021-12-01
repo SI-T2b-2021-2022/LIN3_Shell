@@ -20,7 +20,7 @@ if [ "$EUID" != 0 ]
 fi
 
 # Check if argument $1 est là
-if [ "$1" != "client" ] || [ "$1" != "serveur" ]; then
+if [ $1 != "client" ] || [ $1 != "serveur" ]; then
     echo "Usage   : $0 <client/serveur> <install/check>"
     echo "Example : $0 client install"
     echo ""
