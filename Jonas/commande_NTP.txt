@@ -1,0 +1,30 @@
+# Check sync pool & pool time interval
+ntpstat
+
+# Check list of ntp pool with some information
+ntpq -pn
+
+
+NTP stratum check - sync failed
+# Solution 1
+sudo service ntp restart
+
+# solution 2
+To reset date:
+sudo service ntpd stop
+ntpd -q [IP address of your server]
+sudo service ntpd start
+
+## check precision syn information
+ntptime
+
+
+###
+ntpq -c rv
+
+
+
+
+## Lien utiles
+
+https://newbedev.com/how-do-i-setup-a-local-ntp-server
