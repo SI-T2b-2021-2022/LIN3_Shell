@@ -76,3 +76,5 @@ if [ $1 == "serveur" ]; then
     bash ./Sources/serveur.sh $2
     exit 1
 fi
+
+exit 0
