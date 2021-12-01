@@ -11,6 +11,7 @@
 # =================================================
 
 set -e
+clear
 
 # Check si exec en root
 if [ "$EUID" -ne 0 ]
