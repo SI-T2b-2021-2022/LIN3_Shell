@@ -52,7 +52,7 @@ if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
     echo "Cloning repository"
     mkdir -p /tmp/git/
     git clone https://github.com/SI-T2b-2021-2022/LIN3_Shell /tmp/git/
-    mv /tmp/git/* ./
+    cp -r /tmp/git/* ./
     rm -rf /tmp/git/
 fi
 
