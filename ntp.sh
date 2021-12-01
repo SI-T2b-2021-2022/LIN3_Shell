@@ -42,7 +42,6 @@ if ! command -v ntpd &>/dev/null; then
     apt install apt-utils -qq -y > /dev/null 2>&1
 fi
 
-
 # Clone repo github
 if [ ! -f ./LIN3/.cloned ]; then
     if ! command -v git &>/dev/null; then
@@ -58,9 +57,8 @@ if [ ! -f ./LIN3/.cloned ]; then
     rm -rf /tmp/git/
 fi
 
-
 # Update repo
-apt update > /dev/null /dev/null 2>&1
+apt update > /dev/null 2>&1
 
 # Check si ntp est installé
 if ! command -v ntpd &>/dev/null; then
