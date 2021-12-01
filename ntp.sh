@@ -37,7 +37,7 @@ fi
 
 # Check si apt-utils est installé
 if ! command -v ntpd &>/dev/null; then
-    echo "ntp is not installed."
+    echo "apt-utils is not installed."
     echo "Installing..."
     apt install apt-utils -qq -y > /dev/null 2>&1
 fi
