@@ -18,16 +18,16 @@ fi
 
 # Check if argument $1 est là
 if [ -z "$1" ]; then
-    echo "Usage   : $0 <client/serveur>"
-    echo "Example : $0 client"
+    echo "Usage   : $0 <client/serveur> <install/check>"
+    echo "Example : $0 client install"
     echo ""
     exit 1
 fi
 
 # Check if argument $2 est là
-if [ -z "$1" ]; then
-    echo "Usage   : $0 <client/serveur> <install/check>"
-    echo "Example : $0 client install"
+if [ -z "$2" ]; then
+    echo "Usage   : $0 $1 <install/check>"
+    echo "Example : $0 $1 install"
     echo ""
     exit 1
 fi
