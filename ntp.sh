@@ -24,7 +24,7 @@ if [ $1 != "client" ] && [ $1 != "serveur" ]; then
     echo "Usage   : $0 <client/serveur> <install/check>"
     echo "Example : $0 client install"
     echo ""
-    exit 1
+    exit 0
 fi
 
 
@@ -34,7 +34,7 @@ if [ $2 != "check" ] && [ $2 != "install" ]; then
     echo "Usage   : $0 $1 <install/check>"
     echo "Example : $0 $1 install"
     echo ""
-    exit 1
+    exit 0
 fi
 
 # Check si apt-utils est installé
