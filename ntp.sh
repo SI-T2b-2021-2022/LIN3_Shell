@@ -44,11 +44,14 @@ fi
 
 # Clone repo github
 if [ ! -f ./LIN3/.cloned ]; then
+    # Check if git installed
     if ! command -v git &>/dev/null; then
     echo "git is not installed."
     echo "Installing..."
     apt install git -qq -y > /dev/null 2>&1
     fi
+    
+    # Clone repo
     echo "Cloning repository"
     mkdir -p /tmp/git/
     git clone https://github.com/SI-T2b-2021-2022/LIN3_Shell /tmp/git/
