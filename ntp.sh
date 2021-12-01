@@ -53,6 +53,7 @@ if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
     mkdir -p /tmp/git/
     git clone https://github.com/SI-T2b-2021-2022/LIN3_Shell /tmp/git/
     cp -r /tmp/git/* ./
+    sleep 2
     rm -rf /tmp/git/
 fi
 
