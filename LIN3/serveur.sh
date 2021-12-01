@@ -23,6 +23,7 @@ if [ $1 == "install" ]; then
     fi
 
     # Stop ntp
+    echo "Stopping ntp..."
     service ntp stop
 
     # Rewrite ntp.conf
