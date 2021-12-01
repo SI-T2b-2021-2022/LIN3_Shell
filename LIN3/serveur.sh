@@ -18,14 +18,24 @@ if [ $1 == "install" ]; then
     if ! command -v uwf &>/dev/null; then
     echo "ufw is not installed. Bypassing..."
     else
-    echo "Allowing UDP 123"
+    echo "Allowing UDP 123..."
     ufw allow from any to any port 123 proto udp
     fi
 
-    echo "Importing ntp.conf"
-    curl -L 
+    # Rewrite ntp.conf
+    echo "Importing ntp.conf..."
+    curl https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
 
+    # Restart ntp service
+    echo "Restarting ntp service..."
     service ntp restart
+
+    # Show Information
+    echo "================================================================="
+    ntpstat
+    echo "================================================================="
+    ntpq -pn
+    echo "================================================================="
 
     exit 1
 fi
