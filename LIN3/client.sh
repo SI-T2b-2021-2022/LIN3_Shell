@@ -9,5 +9,20 @@
 # =================================================
 
 set -e
+echo "======================================================"
 
-echo "Script client en $1"
+# Partie installation
+if [ $1 == "install" ]; then
+    
+
+
+    exit 1
+fi
+
+# Partie Check
+if [ $1 == "check" ]; then
+    
+
+
+    exit 1
+fi
