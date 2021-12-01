@@ -6,6 +6,7 @@
 # Last update   : 01.06.2021
 # Version       : V0.1
 # Contributor   : Jonas Aeschbacher
+# Work on       : Debian 11
 # =================================================
 
 set -e
@@ -32,12 +33,20 @@ if [ -z "$2" ]; then
     exit 1
 fi
 
+# Check si apt-utils est installé
+if ! command -v ntpd &>/dev/null; then
+    echo "ntp is not installed."
+    echo "Installing..."
+    apt install apt-utils -y 2>/dev/null
+fi
+
+
 # Clone repo github
 if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
     if ! command -v git &>/dev/null; then
     echo "git is not installed."
     echo "Installing..."
-    apt install git -y > /dev/null
+    apt install git -y 2> /dev/null
     fi
     echo "Cloning repository"
     mkdir /tmp/git/
@@ -56,35 +65,35 @@ apt update > /dev/null
 if ! command -v ntpd &>/dev/null; then
     echo "ntp is not installed."
     echo "Installing..."
-    apt install ntp -y > /dev/null
+    apt install ntp -y 2> /dev/null
 fi
 
 # Check si ntpstat est installé
 if ! command -v ntpstat &>/dev/null; then
     echo "ntpstat is not installed."
     echo "Installing..."
-    apt install ntpstat -y > /dev/null
+    apt install ntpstat -y 2> /dev/null
 fi
 
 # Check si curl est installé
 if ! command -v curl &>/dev/null; then
     echo "curl is not installed."
     echo "Installing..."
-    apt install curl -y > /dev/null
+    apt install curl -y 2> /dev/null
 fi
 
 # Check si wget est installé
 if ! command -v wget &>/dev/null; then
     echo "wget is not installed."
     echo "Installing..."
-    apt install wget -y > /dev/null
+    apt install wget -y 2> /dev/null
 fi
 
 # Check si nano est installé
 if ! command -v nano &>/dev/null; then
     echo "nano is not installed."
     echo "Installing..."
-    apt install nano -y > /dev/null
+    apt install nano -y 2> /dev/null
 fi
 
 if [ $1 == "client" ]; then
