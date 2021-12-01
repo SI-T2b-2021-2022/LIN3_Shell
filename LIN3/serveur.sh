@@ -9,7 +9,7 @@
 # =================================================
 
 set -e
-echo "=============================================================================="
+echo "=============================Serveur.sh======================================="
 
 # Partie installation
 if [ $1 == "install" ]; then
@@ -29,7 +29,7 @@ if [ $1 == "install" ]; then
     # Restart ntp service
     echo "Restarting ntp service..."
     service ntp restart
-    sleep 5
+    sleep 10
 
     # Show Information
     echo "=============================================================================="
