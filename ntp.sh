@@ -38,7 +38,7 @@ fi
 if ! command -v ntpd &>/dev/null; then
     echo "ntp is not installed."
     echo "Installing..."
-    apt install apt-utils -y 2>/dev/null
+    apt install apt-utils -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 
@@ -47,7 +47,7 @@ if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
     if ! command -v git &>/dev/null; then
     echo "git is not installed."
     echo "Installing..."
-    apt install git -y 2>/dev/null
+    apt install git -y 2>/dev/null | grep packages | cut -d '.' -f 1
     fi
     echo "Cloning repository"
     mkdir /tmp/git/
@@ -60,41 +60,41 @@ fi
 
 
 # Update repo
-apt update > /dev/null
+apt update 2>/dev/null | grep packages | cut -d '.' -f 1
 
 # Check si ntp est installé
 if ! command -v ntpd &>/dev/null; then
     echo "ntp is not installed."
     echo "Installing..."
-    apt install ntp -y 2>/dev/null
+    apt install ntp -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 # Check si ntpstat est installé
 if ! command -v ntpstat &>/dev/null; then
     echo "ntpstat is not installed."
     echo "Installing..."
-    apt install ntpstat -y 2>/dev/null
+    apt install ntpstat -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 # Check si curl est installé
 if ! command -v curl &>/dev/null; then
     echo "curl is not installed."
     echo "Installing..."
-    apt install curl -y 2>/dev/null
+    apt install curl -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 # Check si wget est installé
 if ! command -v wget &>/dev/null; then
     echo "wget is not installed."
     echo "Installing..."
-    apt install wget -y 2>/dev/null
+    apt install wget -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 # Check si nano est installé
 if ! command -v nano &>/dev/null; then
     echo "nano is not installed."
     echo "Installing..."
-    apt install nano -y 2>/dev/null
+    apt install nano -y 2>/dev/null | grep packages | cut -d '.' -f 1
 fi
 
 if [ $1 == "client" ]; then
