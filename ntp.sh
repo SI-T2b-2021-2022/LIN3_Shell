@@ -7,7 +7,7 @@
 # Version       : V0.1
 # Contributor   : Jonas Aeschbacher
 # Work on       : Debian 11
-# Run first time: curl -L https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
+# Run first time: curl -LH 'Cache-Control: no-cache' https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
 # =================================================
 
 set -e
