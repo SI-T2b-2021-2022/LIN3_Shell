@@ -15,7 +15,7 @@ echo "=============================Serveur.sh===================================
 if [ $1 == "install" ]; then
     
     # Check if ufw is here for allowing Port 123 UDP
-    if ! command -v uwf &>/dev/null; then
+    if ! command -v ufw &>/dev/null; then
     echo "ufw is not installed. Bypassing..."
     else
     echo "Allowing UDP 123..."
