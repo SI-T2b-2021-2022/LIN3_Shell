@@ -27,8 +27,6 @@ if [ $1 != "client" ] && [ $1 != "serveur" ]; then
     exit 0
 fi
 
-
-
 # Check if argument $2 est là
 if [ $2 != "check" ] && [ $2 != "install" ]; then
     echo "Usage   : $0 $1 <install/check>"
