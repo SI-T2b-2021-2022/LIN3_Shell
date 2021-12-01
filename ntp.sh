@@ -1,26 +1,26 @@
 #!/bin/bash
 
 # =================================================
-# Author        : Yann Solliard - SI-T2b
+# Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3
 # Last update   : 01.06.2021
 # Version       : V0.1
-# Contributor   : Jonas Aeschbacher
+# Contributor   : Jonas / Ashraf
 # Work on       : Debian 11
-# Run first time: curl -L -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
+# Run first time: curl -LvH 'Cache-Control: no-cache' https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
 # =================================================
 
 set -e
 clear
 
 # Check si exec en root
-if [ "$EUID" -ne 0 ]
+if [ "$EUID" != 0 ]
   then echo "Please run as root"
   exit
 fi
 
 # Check if argument $1 est là
-if [ $1 -ne "client" || $1 -ne "serveur" ]; then
+if [ "$1" != "client" ] || [ "$1" != "serveur" ]; then
     echo "Usage   : $0 <client/serveur> <install/check>"
     echo "Example : $0 client install"
     echo ""
@@ -30,7 +30,7 @@ fi
 
 
 # Check if argument $2 est là
-if [ $2 -ne "check" || $2 -ne "install" ]; then
+if [ $2 != "check" ] || [ $2 != "install" ]; then
     echo "Usage   : $0 $1 <install/check>"
     echo "Example : $0 $1 install"
     echo ""
