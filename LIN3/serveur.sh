@@ -22,6 +22,9 @@ if [ $1 == "install" ]; then
     ufw allow from any to any port 123 proto udp
     fi
 
+    # Stop ntp
+    service ntp stop
+
     # Rewrite ntp.conf
     echo "Importing ntp.conf..."
     curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
