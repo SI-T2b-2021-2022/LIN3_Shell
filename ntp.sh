@@ -44,7 +44,7 @@ fi
 
 
 # Clone repo github
-if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
+if [ ! -f ./LIN3/.cloned ]; then
     if ! command -v git &>/dev/null; then
     echo "git is not installed."
     echo "Installing..."
@@ -106,5 +106,3 @@ if [ $1 == "serveur" ]; then
     bash ./LIN3/serveur.sh $2
     exit 1
 fi
-
-exit 0
