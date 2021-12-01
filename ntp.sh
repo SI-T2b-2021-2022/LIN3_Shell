@@ -33,8 +33,17 @@ if [ -z "$2" ]; then
 fi
 
 # Clone repo github
-if [ ! -f ./LIN3/.cloned ]; then
-    
+if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
+    if ! command -v git &>/dev/null; then
+    echo "git is not installed."
+    echo "Installing..."
+    apt install git -y > /dev/null
+    fi
+    echo "Cloning repository"
+    mkdir /tmp/git/
+    git clone https://github.com/SI-T2b-2021-2022/LIN3_Shell /tmp/git/
+    mv /tmp/git/* ./
+    rm -rf /tmp/git/.git/
 fi
 
 
