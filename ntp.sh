@@ -39,7 +39,7 @@ fi
 if ! command -v ntpd &>/dev/null; then
     echo "ntp is not installed."
     echo "Installing..."
-    apt install apt-utils -qq -qq -y > /dev/null /dev/null 2>&1
+    apt install apt-utils -qq -y > /dev/null /dev/null 2>&1
 fi
 
 
@@ -48,7 +48,7 @@ if [ ! -f ./LIN3_Shell/LIN3/.cloned ]; then
     if ! command -v git &>/dev/null; then
     echo "git is not installed."
     echo "Installing..."
-    apt install git -qq -qq -y > /dev/null /dev/null 2>&1
+    apt install git -qq -y > /dev/null /dev/null 2>&1
     fi
     echo "Cloning repository"
     mkdir -p /tmp/git/
