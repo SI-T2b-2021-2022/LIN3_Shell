@@ -32,7 +32,7 @@ if [ $1 == "install" ]; then
     # Restart ntp service
     echo "Redémarrage du service ntp..."
     service ntp restart
-    sleep 10
+    sleep 12
 
     # Show Information
     echo "=============================================================================="
