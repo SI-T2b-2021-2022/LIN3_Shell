@@ -11,7 +11,9 @@
 # =================================================
 
 set -e
-clear
+# Update repo
+apt update > /dev/null 2>&1
+
 
 # Check si exec en root
 if [ "$EUID" != 0 ]
@@ -20,7 +22,14 @@ if [ "$EUID" != 0 ]
 fi
 
 # Check argument
-if [ -z "$1" ] && [ -z "$2" ]; then
+if [[ -z $1 && -z $2 ]]; then
+    echo ""
+    echo "Usage   : $0 <client/serveur> <install/check>"
+    echo "Example : $0 client install"
+    echo ""
+    exit 0
+else
+    # Check if argument $1 est là
     if [ $1 != "client" ] && [ $1 != "serveur" ]; then
         echo ""
         echo "Usage   : $0 <client/serveur> <install/check>"
@@ -37,12 +46,6 @@ if [ -z "$1" ] && [ -z "$2" ]; then
         echo ""
         exit 0
     fi
-else
-    echo ""
-    echo "Usage   : $0 <client/serveur> <install/check>"
-    echo "Example : $0 client install"
-    echo ""
-    exit 0
 fi
 
 # Check si apt-utils est installé
@@ -70,8 +73,6 @@ if [ ! -f ./LIN3/.cloned ]; then
     rm -rf /tmp/git/
 fi
 
-# Update repo
-apt update > /dev/null 2>&1
 
 # Check si ntp est installé
 if ! command -v ntpd &>/dev/null; then
