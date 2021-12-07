@@ -9,17 +9,17 @@
 # =================================================
 
 set -e
-echo "=============================Serveur.sh======================================="
+echo "=============================Server.sh======================================="
 
 # Partie installation
 if [ $1 == "install" ]; then
     
     # Check if ufw is here for allowing Port 123 UDP
     if ! command -v ufw &>/dev/null; then
-    echo "ufw is not installed. Bypassing..."
+        echo "ufw is not installed. Bypassing..."
     else
-    echo "Allowing UDP 123..."
-    ufw allow from any to any port 123 proto udp
+        echo "Allowing UDP 123..."
+        ufw allow from any to any port 123 proto udp
     fi
 
     # Stop ntp
@@ -28,7 +28,7 @@ if [ $1 == "install" ]; then
 
     # Rewrite ntp.conf
     echo "Importing ntp.conf..."
-    curl -s -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
+    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
 
     # Restart ntp service
     echo "Restarting ntp service..."
@@ -41,6 +41,8 @@ if [ $1 == "install" ]; then
     echo "=============================================================================="
     ntpq -pn
     echo "=============================================================================="
+    echo ""
+    echo "Vous pouvez désormais lancez le script avec l'argument *check* afin d'avoir plus d'information."
 
     exit 1
 fi

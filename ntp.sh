@@ -3,11 +3,10 @@
 # =================================================
 # Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3
-# Last update   : 01.06.2021
+# Last update   : 07.12.2021
 # Version       : V0.1
 # Contributor   : Jonas / Ashraf
-# Work on       : Deb based distrib
-# Run first time: curl -L https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
+# Work on       : Deb based distribution
 # =================================================
 
 set -e
@@ -25,16 +24,16 @@ fi
 if [[ -z $1 || -z $2 ]]; then
     echo ""
     echo "Argument invalide ! ❌"
-    echo "Usage   : $0 <client/serveur> <install/check>"
+    echo "Usage   : $0 <client/server> <install/check>"
     echo "Exemple : $0 client install"
     echo ""
     exit 0
 else
     # Check if argument $1 est là
-    if [ $1 != "client" ] && [ $1 != "serveur" ]; then
+    if [ $1 != "client" ] && [ $1 != "server" ]; then
         echo ""
         echo "Argument '$1' invalide ! ❌"
-        echo "Usage   : $0 <client/serveur> <install/check>"
+        echo "Usage   : $0 <client/server> <install/check>"
         echo "Exemple : $0 client install"
         echo ""
         exit 0
@@ -68,12 +67,17 @@ if [ ! -f ./LIN3/.cloned ]; then
     fi
     
     # Clone repo
+    echo "================================================"
     echo "Cloning repository"
+    echo ""
     mkdir -p /tmp/git/
     git clone https://github.com/SI-T2b-2021-2022/LIN3_Shell /tmp/git/
     cp -r /tmp/git/* ./
     sleep 2
     rm -rf /tmp/git/
+    echo ""
+    echo "Clone finished"
+    echo "================================================"
 fi
 
 
@@ -117,7 +121,7 @@ if [ $1 == "client" ]; then
     exit 1
 fi
 
-if [ $1 == "serveur" ]; then
-    bash ./LIN3/serveur.sh $2
+if [ $1 == "server" ]; then
+    bash ./LIN3/server.sh $2
     exit 1
 fi
