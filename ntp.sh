@@ -6,7 +6,7 @@
 # Last update   : 01.06.2021
 # Version       : V0.1
 # Contributor   : Jonas / Ashraf
-# Work on       : Debian 11
+# Work on       : Deb based distrib
 # Run first time: curl -L https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
 # =================================================
 
@@ -22,18 +22,20 @@ if [ "$EUID" != 0 ]
 fi
 
 # Check argument
-if [[ -z $1 && -z $2 ]]; then
+if [[ -z $1 || -z $2 ]]; then
     echo ""
+    echo "Argument invalide ! ❌"
     echo "Usage   : $0 <client/serveur> <install/check>"
-    echo "Example : $0 client install"
+    echo "Exemple : $0 client install"
     echo ""
     exit 0
 else
     # Check if argument $1 est là
     if [ $1 != "client" ] && [ $1 != "serveur" ]; then
         echo ""
+        echo "Argument '$1' invalide ! ❌"
         echo "Usage   : $0 <client/serveur> <install/check>"
-        echo "Example : $0 client install"
+        echo "Exemple : $0 client install"
         echo ""
         exit 0
     fi
@@ -41,8 +43,9 @@ else
     # Check if argument $2 est là
     if [ $2 != "check" ] && [ $2 != "install" ]; then
         echo ""
+        echo "Argument '$2' invalide ! ❌"
         echo "Usage   : $0 $1 <install/check>"
-        echo "Example : $0 $1 install"
+        echo "Exemple : $0 $1 install"
         echo ""
         exit 0
     fi
