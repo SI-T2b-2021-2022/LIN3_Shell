@@ -24,7 +24,7 @@ if [ $1 == "install" ]; then
 
     # Demande l'ip / url du serveur de stratum supérieur
     echo ""
-    read -n 15 -p "Écrivez l'ip du serveur ntp que vous voulez utilisez : " answer
+    read -p "Écrivez l'ip du serveur ntp que vous voulez utilisez : " answer
     echo ""
 
 
