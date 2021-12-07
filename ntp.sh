@@ -9,18 +9,22 @@
 # Work on       : Deb based distribution
 # =================================================
 
+# Arreter le script en cas d'erreur
 set -e
+
 # Update repo
 apt update > /dev/null 2>&1
 
 
-# Check si exec en root
-if [ "$EUID" != 0 ]
-  then echo "Please run as root"
-  exit
+# Check si exec en root ou sudo
+if [ `whoami` != root ]; then
+    echo ""
+    echo "Erreur ! Lancez en root ou sudo ❌."
+    echo ""
+    exit 0
 fi
 
-# Check argument
+# Check si argument donné
 if [[ -z $1 || -z $2 ]]; then
     echo ""
     echo "Argument invalide ! ❌"
@@ -29,7 +33,7 @@ if [[ -z $1 || -z $2 ]]; then
     echo ""
     exit 0
 else
-    # Check if argument $1 est là
+    # Check if argument $1 est bon
     if [ $1 != "client" ] && [ $1 != "server" ]; then
         echo ""
         echo "Argument '$1' invalide ! ❌"
@@ -39,7 +43,7 @@ else
         exit 0
     fi
 
-    # Check if argument $2 est là
+    # Check if argument $2 est bon
     if [ $2 != "check" ] && [ $2 != "install" ]; then
         echo ""
         echo "Argument '$2' invalide ! ❌"

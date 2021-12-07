@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # =================================================
-# Author        : Yann Solliard - SI-T2b
+# Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3 - Serveur
-# Last update   : 01.06.2021
+# Last update   : 07.12.2021
 # Version       : V0.1
-# Contributor   : Jonas Aeschbacher
+# Contributor   : Jonas
 # =================================================
 
 set -e
@@ -16,22 +16,22 @@ if [ $1 == "install" ]; then
     
     # Check if ufw is here for allowing Port 123 UDP
     if ! command -v ufw &>/dev/null; then
-        echo "ufw is not installed. Bypassing..."
+        echo "ufw n'est pas installé."
     else
-        echo "Allowing UDP 123..."
+        echo "Modification d'ufw pour ouvrir le port UDP 123..."
         ufw allow from any to any port 123 proto udp
     fi
 
     # Stop ntp
-    echo "Stopping ntp..."
+    echo "Arrêt du service ntp..."
     service ntp stop
 
     # Rewrite ntp.conf
-    echo "Importing ntp.conf..."
-    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_serveur.conf > /etc/ntp.conf
+    echo "Importation de ntp.conf..."
+    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_server.conf > /etc/ntp.conf
 
     # Restart ntp service
-    echo "Restarting ntp service..."
+    echo "Redémarrage du service ntp..."
     service ntp restart
     sleep 10
 
