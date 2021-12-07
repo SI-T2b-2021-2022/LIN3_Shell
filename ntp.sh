@@ -19,9 +19,10 @@ if [ "$EUID" != 0 ]
   exit
 fi
 
-# Check if argument $1 est là
+# Check argument
 if [ -z "$1" ] && [ -z "$2" ]; then
     if [ $1 != "client" ] && [ $1 != "serveur" ]; then
+        echo ""
         echo "Usage   : $0 <client/serveur> <install/check>"
         echo "Example : $0 client install"
         echo ""
@@ -30,12 +31,14 @@ if [ -z "$1" ] && [ -z "$2" ]; then
 
     # Check if argument $2 est là
     if [ $2 != "check" ] && [ $2 != "install" ]; then
+        echo ""
         echo "Usage   : $0 $1 <install/check>"
         echo "Example : $0 $1 install"
         echo ""
         exit 0
     fi
 else
+    echo ""
     echo "Usage   : $0 <client/serveur> <install/check>"
     echo "Example : $0 client install"
     echo ""
