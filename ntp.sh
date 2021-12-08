@@ -11,7 +11,6 @@
 
 # Arreter le script en cas d'erreur
 set -e
-clear
 
 # Check si exec en root ou sudo
 if [ "$EUID" -ne 0 ]; then
