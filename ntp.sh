@@ -12,12 +12,8 @@
 # Arreter le script en cas d'erreur
 set -e
 
-# Update repo
-apt update > /dev/null 2>&1
-
-
 # Check si exec en root ou sudo
-if [ `whoami` != root ]; then
+if [ "$EUID" -ne 0 ]; then
     echo ""
     echo "Erreur ! Lancez en root ou sudo ❌."
     echo ""
@@ -53,6 +49,9 @@ else
         exit 0
     fi
 fi
+
+# Update repo
+apt update > /dev/null 2>&1
 
 # Check si apt-utils est installé
 if ! command -v ntpd &>/dev/null; then
