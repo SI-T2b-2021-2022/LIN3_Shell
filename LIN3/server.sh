@@ -42,7 +42,7 @@ if [ $1 == "install" ]; then
     echo "=============================================================================="
     echo ""
     echo "Vous pouvez désormais lancez le script avec l'argument *check* afin d'avoir plus d'information."
-
+    echo ""
     exit 1
 fi
 

@@ -24,6 +24,7 @@ if [ $1 == "install" ]; then
     # Demande l'ip / url du serveur de stratum supérieur
     echo ""
     read -p "Écrivez l'ip du serveur ntp que vous voulez utiliser : " answer < /dev/tty
+    echo ""
 
     # Modifiez changeme par ${answer}
     sed -i "s/changeme/${answer}/" /etc/ntp.conf
@@ -42,7 +43,7 @@ if [ $1 == "install" ]; then
     echo "=============================================================================="
     echo ""
     echo "Vous pouvez désormais lancez le script avec l'argument *check* afin d'avoir plus d'information."
-
+    echo ""
     exit 1
 fi
 
