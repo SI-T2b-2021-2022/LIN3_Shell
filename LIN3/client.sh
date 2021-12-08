@@ -8,11 +8,14 @@
 # Contributor   : Jonas
 # =================================================
 
+echo ""
 echo "==============================Client.sh======================================="
 
 # Partie installation
 if [ $1 == "install" ]; then
+
     
+
     # Stop ntp
     echo "Arrêt du service ntp..."
     service ntp stop
