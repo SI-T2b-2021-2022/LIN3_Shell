@@ -53,9 +53,9 @@ else
     if [[ $1 == "client" && $2 == "install"  ]]; then
         if [ -z $3 ]; then
             echo ""
-            echo "Argument manquant ! ❌"
-            echo "Usage   : $0 $1 <install/check>"
-            echo "Exemple : $0 client install"
+            echo "Serveur ntp manquant ! ❌"
+            echo "Usage   : $0 $1 $2"
+            echo "Exemple : $0 client install 10.0.1.11"
             echo ""
             exit 0
         fi
