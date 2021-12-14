@@ -33,8 +33,8 @@ if [ $1 == "install" ]; then
     # echo ""
 
     # Modifiez changeme par ${ipntp}
-    sed -i "s/changeme/${ipntp}/" /etc/ntp.conf
-    sed -i "s/2changeme/${fallip}/" /etc/ntp.conf
+    sed -i "s/primary/${ipntp}/" /etc/ntp.conf
+    sed -i "s/fall/${fallip}/" /etc/ntp.conf
 
 
     # Restart ntp service
