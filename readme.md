@@ -1,24 +1,53 @@
 # Script Shell NTP LIN3
 
-Dernière modification : 07/12/2021
+Dernière modification : 15/12/2021
 
+## Commande pour lancer le script
 
-## Utilisation
-
-lancez la commande en modifiant "arg1" par "server" ou "client" et remplacez "arg2" par "install" ou "check"
+Lire entièrement le readme avant de lancer la commande.
 
 ```Shell
 curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2 arg3 arg4
 ```
 
-### server install
-Permet d'installer le serveur ntp utilisant time.euro.apple.com comme serveur de temps et time.windows.com comme serveur de secours.
+Voir ci dessous explication des arguments possibles
 
-### server check
-Permet d'afficher des informations lier à la synchronisation du ntp avec le serveur de stratum supérieur
+### arg1
 
-### client install
-Permet d'installer le client ntp et utiliser le serveur de stratum supérieur choisit par vos soins (IP demandé durant l'execution du script)
+L'argument 1 permet de définir si nous voulons demander au script d'être en mode serveur ou client
 
-### client check
-Permet d'afficher les informations lier à la synchronisation du ntp avec le serveur ntp local
+Exemple : 
+```Shell
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- server
+
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- client
+```
+
+### arg2
+
+L'argument 2 permet de définir si nous voulons installer ou checker le serveur / client (<- Dépend de l'argument 1)
+
+Exemple : 
+```Shell
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- server install
+
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- client check
+```
+
+### arg3
+
+L'argument 3 n'est utilisable qu'en mode client install, il permet de définir le serveur ntp primaire du client
+
+Exemple : 
+```Shell
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- client install time.euro.apple.com
+```
+
+### arg4
+
+L'argument 4 n'est utilisable qu'en mode client install, il permet de définir le serveur ntp de secours du client
+
+Exemple : 
+```Shell
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- client install time.euro.apple.com time.cloudflare.com
+```
