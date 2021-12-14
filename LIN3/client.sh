@@ -9,7 +9,7 @@
 # =================================================
 
 ipntp=$2
-ipntpfall=$3
+fallip=$3
 
 echo ""
 echo "==============================Client.sh======================================="
@@ -34,7 +34,7 @@ if [ $1 == "install" ]; then
 
     # Modifiez changeme par ${ipntp}
     sed -i "s/changeme/${ipntp}/" /etc/ntp.conf
-    sed -i "s/changeme2/${ipntpfall}/" /etc/ntp.conf
+    sed -i "s/2changeme/${fallip}/" /etc/ntp.conf
 
 
     # Restart ntp service
