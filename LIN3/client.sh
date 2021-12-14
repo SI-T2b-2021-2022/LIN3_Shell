@@ -4,9 +4,12 @@
 # Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3 - Client
 # Last update   : 07.12.2021
-# Version       : V0.1
+# Version       : V1.4
 # Contributor   : Jonas
 # =================================================
+
+ipntp=$2
+ipntpfall=$3
 
 echo ""
 echo "==============================Client.sh======================================="
@@ -29,8 +32,9 @@ if [ $1 == "install" ]; then
     # read -p "Écrivez l'ip du serveur ntp que vous voulez utiliser : " answer < /dev/tty
     # echo ""
 
-    # Modifiez changeme par ${answer}
-    sed -i "s/changeme/${2}/" /etc/ntp.conf
+    # Modifiez changeme par ${ipntp}
+    sed -i "s/changeme/${ipntp}/" /etc/ntp.conf
+    sed -i "s/changeme2/${ipntpfall}/" /etc/ntp.conf
 
 
     # Restart ntp service

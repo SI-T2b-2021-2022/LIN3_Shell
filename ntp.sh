@@ -3,8 +3,8 @@
 # =================================================
 # Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3
-# Last update   : 07.12.2021
-# Version       : V0.1
+# Last update   : 14.12.2021
+# Version       : V1.4
 # Contributor   : Jonas / Ashraf
 # Work on       : Deb based distribution
 # =================================================
@@ -133,7 +133,7 @@ if ! command -v nano &>/dev/null; then
 fi
 
 if [ $1 == "client" ]; then
-    bash ./LIN3/client.sh $2 $3
+    bash ./LIN3/client.sh $2 $3 $4
     exit 1
 fi
 
