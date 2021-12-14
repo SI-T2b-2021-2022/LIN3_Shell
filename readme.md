@@ -8,7 +8,7 @@ Dernière modification : 07/12/2021
 lancez la commande en modifiant "arg1" par "server" ou "client" et remplacez "arg2" par "install" ou "check"
 
 ```Shell
-curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | bash -s -- arg1 arg2 arg3
 ```
 
 ### server install

@@ -133,7 +133,7 @@ if ! command -v nano &>/dev/null; then
 fi
 
 if [ $1 == "client" ]; then
-    bash ./LIN3/client.sh $2
+    bash ./LIN3/client.sh $2 $3
     exit 1
 fi
 

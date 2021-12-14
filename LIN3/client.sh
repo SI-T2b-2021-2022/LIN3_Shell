@@ -25,12 +25,12 @@ if [ $1 == "install" ]; then
     curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/LIN3/ntp_client.conf > /etc/ntp.conf
 
     # Demande l'ip / url du serveur de stratum supérieur
-    echo ""
-    read -p "Écrivez l'ip du serveur ntp que vous voulez utiliser : " answer < /dev/tty
-    echo ""
+    # echo ""
+    # read -p "Écrivez l'ip du serveur ntp que vous voulez utiliser : " answer < /dev/tty
+    # echo ""
 
     # Modifiez changeme par ${answer}
-    sed -i "s/changeme/${answer}/" /etc/ntp.conf
+    sed -i "s/changeme/${2}/" /etc/ntp.conf
 
 
     # Restart ntp service
