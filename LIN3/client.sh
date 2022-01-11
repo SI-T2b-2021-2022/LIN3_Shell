@@ -72,6 +72,8 @@ if [ $1 == "check" ]; then
     echo ""
     echo "=================================date========================================="
     date
+    echo ""
+    echo "TimeZone :"
     cat /etc/timezone
     echo ""
 
