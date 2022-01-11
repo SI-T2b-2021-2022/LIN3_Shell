@@ -13,7 +13,7 @@
 set -e
 
 # Check si exec en root ou sudo
-if [ "$EUID" -ne 0 ]; then
+if [ "$EUID" > 1000 ]; then
     echo ""
     echo "Erreur ! Lancez en root ou sudo ❌."
     echo ""
