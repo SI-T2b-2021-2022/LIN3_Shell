@@ -12,8 +12,9 @@
 # Arreter le script en cas d'erreur
 set -e
 
+
 # Check si exec en root ou sudo
-if [ "$EUID" > 1000 ]; then
+if [[ $(id -u) -ne 0 ]]; then
     echo ""
     echo "Erreur ! Lancez en root ou sudo ❌."
     echo ""
