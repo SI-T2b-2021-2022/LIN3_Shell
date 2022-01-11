@@ -49,5 +49,5 @@ L'argument 4 n'est utilisable qu'en mode client install, il permet de définir l
 
 Exemple : 
 ```Shell
-curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | sudo bash -s -- client install time.euro.apple.com time.cloudflare.com
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | sudo bash -s -- client install 10.0.1.10 time.euro.apple.com
 ```
