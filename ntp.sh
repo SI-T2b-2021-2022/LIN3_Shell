@@ -3,15 +3,14 @@
 # =================================================
 # Author        : Yann - SI-T2b
 # Usage         : NTP Script - LIN3
-# Last update   : 14.12.2021
-# Version       : V1.4
+# Last update   : 12.1.2022
+# Version       : V1.6
 # Contributor   : Jonas / Ashraf
 # Work on       : Deb based distribution
 # =================================================
 
 # Arreter le script en cas d'erreur
 set -e
-
 
 # Check si exec en root ou sudo
 if [[ $(id -u) -ne 0 ]]; then
