@@ -134,11 +134,11 @@ if ! command -v nano &>/dev/null; then
 fi
 
 if [ $1 == "client" ]; then
-    bash ./LIN3/client.sh $2 $3 $4
+    bash ./assets/scripts/client.sh $2 $3 $4
     exit 1
 fi
 
 if [ $1 == "server" ]; then
-    bash ./LIN3/server.sh $2
+    bash ./assets/scripts/server.sh $2
     exit 1
 fi

@@ -1,7 +1,6 @@
 # Script Shell NTP LIN3
 
-Dernière modification : 15/12/2021
-
+Dernière modification : 12/01/2022
 ## Commande pour lancer le script
 
 Lire entièrement le readme avant de lancer la commande.
@@ -31,7 +30,7 @@ Exemple :
 ```Shell
 curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | sudo bash -s -- server install
 
-curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | suudo bash -s -- client check
+curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | sudo bash -s -- client check
 ```
 
 ### arg3
