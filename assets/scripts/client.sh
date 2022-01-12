@@ -22,7 +22,7 @@ if [ $1 == "install" ]; then
 
     # Rewrite ntp.conf
     echo "Importation de ntp.conf..."
-    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/dev/assets/conf/ntp_client.conf > /etc/ntp.conf
+    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/assets/conf/ntp_client.conf > /etc/ntp.conf
 
     # Demande l'ip / url du serveur de stratum supérieur
     # echo ""
