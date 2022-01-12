@@ -1,7 +1,6 @@
 # Script Shell NTP LIN3
 
-Dernière modification : 15/12/2021
-
+Dernière modification : 12/01/2022
 ## Commande pour lancer le script
 
 Lire entièrement le readme avant de lancer la commande.
