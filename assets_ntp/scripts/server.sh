@@ -2,42 +2,38 @@
 
 # =================================================
 # Author        : Yann - SI-T2b
-# Usage         : NTP Script - LIN3 - Client
+# Usage         : NTP Script - LIN3 - Serveur
 # Last update   : 07.12.2021
-# Version       : V1.4
+# Version       : V0.1
 # Contributor   : Jonas
 # =================================================
 
-ipntp=$2
-fallip=$3
-
 echo ""
-echo "==============================Client.sh======================================="
+echo "=============================Server.sh======================================="
 
 # Partie installation
 if [ $1 == "install" ]; then
+    
+    # Check if ufw is here for allowing Port 123 UDP
+    if ! command -v ufw &>/dev/null; then
+        echo "ufw n'est pas installé."
+    else
+        echo "Modification d'ufw pour ouvrir le port UDP 123..."
+        ufw allow from any to any port 123 proto udp
+    fi
+
     # Stop ntp
     echo "Arrêt du service ntp..."
     service ntp stop
 
     # Rewrite ntp.conf
     echo "Importation de ntp.conf..."
-    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/assets/conf/ntp_client.conf > /etc/ntp.conf
-
-    # Demande l'ip / url du serveur de stratum supérieur
-    # echo ""
-    # read -p "Écrivez l'ip du serveur ntp que vous voulez utiliser : " answer < /dev/tty
-    # echo ""
-
-    # Modifiez changeme par ${ipntp}
-    sed -i "s/primary/${ipntp}/" /etc/ntp.conf
-    sed -i "s/fall/${fallip}/" /etc/ntp.conf
-
+    curl -s https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/assets_ntp/conf/ntp_server.conf > /etc/ntp.conf
 
     # Restart ntp service
     echo "Redémarrage du service ntp..."
     service ntp restart
-    sleep 12
+    sleep 10
 
     # Show Information
     echo "=============================================================================="

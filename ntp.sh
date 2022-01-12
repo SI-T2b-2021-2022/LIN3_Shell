@@ -134,11 +134,11 @@ if ! command -v nano &>/dev/null; then
 fi
 
 if [ $1 == "client" ]; then
-    bash ./assets/scripts/client.sh $2 $3 $4
+    bash ./assets_ntp/scripts/client.sh $2 $3 $4
     exit 1
 fi
 
 if [ $1 == "server" ]; then
-    bash ./assets/scripts/server.sh $2
+    bash ./assets_ntp/scripts/server.sh $2
     exit 1
 fi
