@@ -1,7 +1,8 @@
 # Script Shell NTP LIN3
 
+## NTP
 Dernière modification : 12/01/2022
-## Commande pour lancer le script
+### Commande pour lancer le script
 
 Lire entièrement le readme avant de lancer la commande.
 
@@ -50,3 +51,5 @@ Exemple :
 ```Shell
 curl -sL https://raw.githubusercontent.com/SI-T2b-2021-2022/LIN3_Shell/main/ntp.sh | sudo bash -s -- client install 10.0.1.10 time.euro.apple.com
 ```
+
+## Kerbros
