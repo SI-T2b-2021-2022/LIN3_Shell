@@ -3,7 +3,7 @@
 # =================================================
 # Author        : Yann - SI-T2b
 # Usage         : Kerberos Script - LIN3
-# Last update   : 12.1.2022
+# Last update   : 19.1.2022
 # Version       : V1
 # Work on       : Deb based distribution
 # =================================================
