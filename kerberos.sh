@@ -28,7 +28,7 @@ if [[ -z $1 || -z $2 ]]; then
     echo ""
     exit 0
 else
-    # Check if argument $1 est bon
+    Check if argument $1 est bon
     if [ $1 != "client" ] && [ $1 != "server" ]; then
         echo ""
         echo "Argument '$1' invalide ! ❌"
@@ -38,7 +38,7 @@ else
         exit 0
     fi
 
-    # Check if argument $2 est bon
+    Check if argument $2 est bon
     if [ $2 != "check" ] && [ $2 != "install" ]; then
         echo ""
         echo "Argument '$2' invalide ! ❌"
@@ -48,7 +48,7 @@ else
         exit 0
     fi
 
-    # Check si argument pour serveur kerberos personnalisé présent
+    Check si argument pour serveur kerberos personnalisé présent
     if [[ $1 == "client" && $2 == "install"  ]]; then
         if [ -z $3 ]; then
             echo ""
@@ -60,3 +60,12 @@ else
         fi
     fi
 fi
+
+apt update
+
+echo krb5-config krb5-config/add_servers_realm string krb5.int.slyinc.ch | debconf-set-selections
+echo krb5-config krb5-config/admin_server string int.slyinc.ch | debconf-set-selections
+echo krb5-config krb5-config/default_realm string int.slyinc.ch | debconf-set-selections
+echo krb5-config krb5-config/kerberos_servers string krb5.int.slyinc.ch | debconf-set-selections
+
+apt install -y krb5-kdc krb5-admin-server krb5-config
